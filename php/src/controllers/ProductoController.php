@@ -32,7 +32,7 @@ class ProductoController
 
             $input = json_decode(file_get_contents('php://input'), true);
 
-            if (!isset($input['nombre']) || !isset($input['precio'])) {
+            if ( !isset($input['nombre']) || $input['nombre'] == '' || !isset($input['precio']) || $input['precio'] == '' ) {
                 throw new Exception("El nombre y el precio son requeridos.");
             }
 
@@ -80,7 +80,7 @@ class ProductoController
         try {
             $input = json_decode(file_get_contents('php://input'), true);
 
-            if (!isset($input['nombre']) || !isset($input['precio'])) {
+            if ( !isset($input['nombre']) || $input['nombre'] == '' || !isset($input['precio']) || $input['precio'] == '' ) {
                 throw new Exception("El nombre y el precio son requeridos.");
             }
 
